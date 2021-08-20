@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="/public/css/detail.css">
+        <script src="https://use.fontawesome.com/471bc3a7b5.js"></script>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    
+    <title>Movie</title>
+</head>
+
+<body>
+
+<!-- navbar -->
+<div class="jumbotron sticky-top" style="margin-bottom: -20px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="/index.html">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Logo_Vidio.png/1280px-Logo_Vidio.png"
+                            alt="" class="img-fluid" width="100" height="30">
+                    </a>
+                </div>
+            </nav>
+            <button class="navbar-toggler" type="button" id="nav-tgl" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html">Beranda</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Chat</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Genre
+                        </a>
+                        <ul class="dropdown-menu" style="min-width:400px" aria-labelledby="navbarDropdown">
+                            <div class="row">
+                                <div class="col-sm-6" id="dropdown-genre-1">
+
+                                </div>
+                                <div class="col-sm-6" id="dropdown-genre-2">
+
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="d-flex">
+                    <input class="form-control me-2" id="movSearch" type="search" placeholder="Search" aria-label="Search" required>
+                    <button class="btn btn-outline-danger" onclick="gotoSearchPage()">Search</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+<!-- body -->
+
+<div class="parallax" id="parallax"></div>
+<div class="container" id="content">
+    <h1 id="movTitle"></h1>
+    <h4 id="movYear" style="margin-bottom: 32px;"></h4>
+    <div class="ratio ratio-16x9" style="margin-bottom: 32px;">
+        <iframe id="movTrailer" src="" allowfullscreen>
+        </iframe>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-sm-3 col-md-3">
+            <img src="" alt="" id="movPoster" height="100%" width="100%" class="img-fluid" style="padding: 24px;">
+        </div>
+        <div class="col-sm-9">
+            <div class="row justify-content-md-center">
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle" style="padding: 24px; margin-top: 24px;">
+                        <tbody>
+                            <tr>
+                                <td class="table-dark text-center col-md-2"><strong>Title</strong></td>
+                                <td><p id="detail-title"></p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-dark text-center"><strong>Release Date</strong></td>
+                                <td><p id="detail-release"></p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-dark text-center"><strong>Genre</strong></td>
+                                <td><p id="detail-genre"></p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-dark text-center"><strong>Rating</strong></td>
+                                <td><p id="detail-rating"></p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-dark text-center"><strong>Revenue</strong></td>
+                                <td><p id="detail-revenue"></p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-dark text-center"><strong>Description</strong></td>
+                                <td><p id="detail-description"></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card col-md-4"
+            style="border-left-width: 10px; border-left-color: red; background-color: white; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  margin-bottom: 20px;">
+                <div class="card-body">
+                    <h2 id="genre-title">Cast</h2>
+                </div>
+        </div>
+    <div class="carousel" id="cast-content" >
+        <!-- <div class="carousel-cell">
+            <img src="https://cdn.pixabay.com/photo/2013/07/13/13/33/blob-161097_960_720.png" alt="" class="p">
+            <h3 class="n">Eddie Kinsella</h3>
+            <h4 class="n">(asdsad</h4>
+            <p class="content"></p>
+        </div>
+        <div class="carousel-cell">
+            <img src="https://cdn.pixabay.com/photo/2013/07/13/13/33/blob-161097_960_720.png" alt="" class="p">
+            <p class="n">Eddie Kinsella</p>
+            <p class="content"></p>
+        </div> -->
+    </div>
+    <br>
+    <div class="card col-md-4"
+    style="border-left-width: 10px; border-left-color: red; background-color: white; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  margin-bottom: 20px;">
+        <div class="card-body">
+            <h2 id="genre-title">Crew</h2>
+        </div>
+    </div>
+    <div class="carousel" id="crew-content" >
+
+    </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+<script src="/public/js/navbar.js"></script>
+<script src="/public/js/detail.js"></script>
+
+</body>
+<footer>
+    <div class="jumbotron" style="background-color: rgb(252, 72, 72); color:white;text-align: center;">
+        <p>© 2021 Fedro</p>
+    </div>
+</footer>
+
+</html>

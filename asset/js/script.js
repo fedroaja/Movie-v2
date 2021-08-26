@@ -43,7 +43,7 @@ function render_slide(slide){
         '<button type="button" style="background-color:black;" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="'+i+'" class="active" aria-current="true" aria-label="Slide 1"></button>';
         slide_movie.innerHTML += 
         '<div class="carousel-item '+condition+'" >'+
-        '<img src="'+ back_url+slide[i].backdrop_path +'" class="d-block w-100" alt="...">'+
+        '<img src="'+ back_url+slide[i].backdrop_path +'" class="d-block w-100" alt="..." loading="lazy">'+
         '<div class="carousel-caption d-none d-md-block" style="background-color:rgba(255, 255, 255, 0.5);color:black; padding:12px">'+
         '<h5>'+slide[i].original_title+'</h5>'+
         '<p>'+slide[i].overview+'</p>'+
@@ -74,7 +74,7 @@ function renderData(mData){
         main_body.innerHTML += 
             "<div class='card-main card col-md-4 col-sm-12'>" +
                 "<div class='tag-rate'><i class='fa fa-star' aria-hidden='true'></i> "+element.vote_average+"</div>"+
-                "<img src='"+ poster +"' class='card-img-top img-fluid' alt='...'>"+
+                "<img src='"+ poster +"' class='card-img-top img-fluid' alt='...' loading='lazy'>"+
                 "<div class='card-body' id='"+element.id+"'>"+
                     "<h5 class='card-title'>"+element.original_title+"</h5>"+
                     "<p class='card-text'>"+element.release_date.slice(0,4)+"<br></p>"+
